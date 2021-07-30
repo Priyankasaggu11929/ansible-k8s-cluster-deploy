@@ -1,4 +1,4 @@
-# [Solution] TKG-SRE Candidate Homework - ap-southeast-2
+# [Solution]  
 
 ## Contents
 
