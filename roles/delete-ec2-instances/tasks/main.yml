@@ -1,0 +1,8 @@
+---
+# delete-ec2-instances
+- name: Delete ec2 instances in default VPC
+  block:
+    - import_tasks: ec2.yml
+    - import_tasks: network-information.yml
+    - import_tasks: security-group.yml
+    - import_tasks: key-pair.yml

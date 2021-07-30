@@ -1,0 +1,19 @@
+---
+# Clean the project setup
+
+- hosts: local
+  gather_facts: False
+  roles:
+    - role: delete-ec2-instances
+
+  tasks:
+  - name: cleaning the hosts inventory 
+    copy:    
+      src: inventory/.ec2-example
+      dest: inventory/ec2
+
+  - name: cleaning the local EC2 private keys
+    shell: "rm -rf keys/*"
+      
+  - name: cleaning the local kubeconfig file
+    shell: "rm -rf kube-cluster/kubeconfig/*"

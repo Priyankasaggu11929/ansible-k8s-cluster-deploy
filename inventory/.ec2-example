@@ -1,0 +1,9 @@
+[master]
+# master nodes of the cluster
+
+[node]
+# worker nodes of the cluster
+
+[kube_cluster:children]
+master
+node

@@ -1,0 +1,7 @@
+---
+- name: Remove Security Group
+  ec2_group:
+    name: "{{ instance_name }}-sg"
+    vpc_id: "{{ vpc_id }}"
+    region: "{{ region_name }}"
+    state: absent    

@@ -1,0 +1,7 @@
+---
+# vars file for delete-ec2-instances
+region_name: 'ap-southeast-2'
+key_name: 'kubernetes-key'
+ami_id: 'ami-0f39d06d145e9bb63' # Ubuntu Server 18.04 LTS (HVM), SSD Volume Type, ap-southeast-2 
+instance_type: 't3.small'
+instance_name: 'kubeadm-cluster'

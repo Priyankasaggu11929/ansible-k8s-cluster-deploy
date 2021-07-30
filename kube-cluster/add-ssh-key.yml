@@ -1,0 +1,15 @@
+---
+
+#Add ssh key to newly provisioned ec2 instance
+
+- hosts: kube_cluster
+  vars:
+    - status : "present"
+    - key : "~/.ssh/ansible.pub"
+  tasks:
+    - name: "Copy the authorized key file from"
+      authorized_key:
+        user: "{{ansible_user}}"
+        state: "{{status}}"
+        key: "{{ lookup('file', '{{ key }}')}}"
+

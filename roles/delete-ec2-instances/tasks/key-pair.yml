@@ -1,0 +1,7 @@
+---
+- name: Delete the EC2 key pair
+  ec2_key:
+    name: "{{ key_name }}"
+    region: "{{ region_name }}"
+    state: absent
+
