@@ -130,30 +130,42 @@ The project is using the following 2 ansible playbook(s) :
 
 - Run the following command to clone the project:
 
-  `git clone git@github.com:Priyankasaggu11929/k8s-deploy-playbook.git`
+  ```
+  git clone git@github.com:Priyankasaggu11929/k8s-deploy-playbook.git
+  ```
 
 **[Step2] Create the cluster**
 
-- Run the `create-cluster.yml` ansible playbook with the command:
+- It will run the `create-cluster.yml` ansible playbook
 
-  `make create-cluster`
+  ```
+  make create-cluster
+  ```
   
   In case of a kubernetes cluster with multiple worker nodes, run the following command, providing an argument `worker` value:
   
-  For ex: `make create-cluster worker=2`
+  For ex: 
+  
+  ```
+  make create-cluster worker=2
+  ```
 
 **[Step3] Get the kube-config file**
 
-- This is copied from the cluster's master node running in AWS EC2
+- The kubeconfig file is copied from the kubernetes cluster's master node running in AWS EC2 instance.
 
-  `make get_kubeconig`
+  ```
+  make get_kubeconig
+  ```
   
 **[Step4] Decommission the cluster & clean the project**
   
-- Run the `delete-cluster.yml` ansible playbook with the command:
+- It will run `delete-cluster.yml` ansible playbook
 
-  `make delete_cluster`
+  ```
+  make delete_cluster
+  ```
   
 
-***Note:*** *Clean the project using `make delete_cluster`, before re-running the `make create-cluster` command.*
+***Note: Clean the project using `make delete_cluster`, before re-running the `make create-cluster` command.***
 
