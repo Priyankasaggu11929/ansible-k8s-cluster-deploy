@@ -3,7 +3,6 @@
 ## Contents
 
 - [Introduction](#Introduction)
-- [Tools & Other Software](#Tools-and-Software)
 - [Prerequistes](#Prerequistes)
 - [Project description](#Project-description)
 - [Instructions to provision the cluster](#Instructions-to-provision-the-cluster)
@@ -14,8 +13,22 @@ The following document demonstrates the process and the steps followed, to confi
 
 I have used `Ansible` playbooks to automate the provisioning of AWS EC2 instances, the security-group & key pairs, and the further process of initiating & bootstrapping the kubernetes cluster on EC2 instances (as `master` & `worker` nodes) using the `kubeadm` tool.  
 
+## Prerequistes
 
-## Tools and Software
+- Create a SSH key pair (in my case, I’ve named it `ansible`)
+
+  *(Or use the one handed over in the email thread. Please add it on the right path i.e, `~/.ssh/ansible`)*
+
+  ```
+  $ ssh-keygen -t rsa
+ 
+  Generating public/private rsa key pair.
+  Enter file in which to save the key (/root/.ssh/id_rsa): /user/.ssh/ansible
+  Enter passphrase (empty for no passphrase):
+  Enter same passphrase again:
+  ```
+  
+### Tools and Software
 
 Before laying down steps/instructions for provisioning the cluster, here’s a compiled list of the tools/software/services I used.
 
@@ -37,24 +50,7 @@ Before laying down steps/instructions for provisioning the cluster, here’s a c
 
 - [Docker](https://docs.docker.com/engine/install/ubuntu/)
 - [kubelet, kubeadm, & kubectl](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
-
-
-
-## Prerequistes
-
-- Create a SSH key pair (in my case, I’ve named it `ansible`)
-
-  *(Handed over in the email thread. Please add it on the right path i.e, `~/.ssh/ansible`)*
-
-  ```
-  $ ssh-keygen -t rsa
  
-  Generating public/private rsa key pair.
-  Enter file in which to save the key (/root/.ssh/id_rsa): /user/.ssh/ansible
-  Enter passphrase (empty for no passphrase):
-  Enter same passphrase again:
-  ```
-  
 
 ## Project description
 
