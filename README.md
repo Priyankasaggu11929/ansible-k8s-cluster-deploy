@@ -69,6 +69,9 @@ The project is using the following 2 ansible playbook(s) :
 
 ### `create-cluster.yml` does the following in order:
 
+![create-cluster-yaml](https://user-images.githubusercontent.com/30499743/127725521-fd178450-e688-4ad0-80cb-b208eac35583.jpg)
+
+
 - Creates an EC2 key pair and saves the private key to the `keys` directory on localhost (in the project directory).
 - Determines the default VPC and its subnets, in the `ap-southeast-2` region. And then randomly selects a subnet from the list to host the EC2 instances.
 - Creates a security group to be attached to the cluster.
@@ -115,6 +118,8 @@ The project is using the following 2 ansible playbook(s) :
 
 ### `delete-cluster.yml` does the following in order:
 
+![delete-cluster-yml](https://user-images.githubusercontent.com/30499743/127725544-4061d864-e3e0-4eab-b107-b4ccf1f5cc1e.jpg)
+
 - Delete both the EC2 instances (master & worker nodes)
 - Delete the security group that was attached to the above instances
 - Delete the Key pair
@@ -126,7 +131,21 @@ The project is using the following 2 ansible playbook(s) :
 
 ## Instructions to provision the cluster
 
-**[Step1]  Clone the project**
+**[Step 1]  Configure the AWS CLI**
+
+- Run the following command to login into the provided aws account using aws-cli, providing the respective `AWS Access Key ID` , `AWS Secret Access Key`, & required `region` name.
+
+  ```
+  aws configure
+  ```
+
+**[Step 2]  Copy the provided SSH key (`ansible.pub`) in the required path**
+
+  ```
+  cp <path-to-downloads>/ansible.pub ~/.ssh/
+  ```
+
+**[Step 3]  Clone the project**
 
 - Run the following command to clone the project:
 
@@ -134,7 +153,7 @@ The project is using the following 2 ansible playbook(s) :
   git clone git@github.com:Priyankasaggu11929/k8s-deploy-playbook.git
   ```
 
-**[Step2] Create the cluster**
+**[Step 4] Create the cluster**
 
 - It will run the `create-cluster.yml` ansible playbook
 
@@ -150,7 +169,7 @@ The project is using the following 2 ansible playbook(s) :
   make create-cluster worker=2
   ```
 
-**[Step3] Get the kube-config file**
+**[Step 5] Get the kube-config file**
 
 - The kubeconfig file is copied from the kubernetes cluster's master node running in AWS EC2 instance.
 
@@ -158,14 +177,13 @@ The project is using the following 2 ansible playbook(s) :
   make get_kubeconig
   ```
   
-**[Step4] Decommission the cluster & clean the project**
+**[Step 6] Decommission the cluster & clean the project**
   
 - It will run `delete-cluster.yml` ansible playbook
 
   ```
   make delete_cluster
   ```
-  
 
-***Note: Clean the project using `make delete_cluster`, before re-running the `make create-cluster` command.***
+###### Note: Clean the project using `make delete_cluster`, before re-running the `make create-cluster` command.
 
