@@ -182,7 +182,7 @@ The project is using the following 2 ansible playbook(s) :
 - The kubeconfig file is copied from the kubernetes cluster's master node running in AWS EC2 instance (during the Step 4)
 
   ```
-  make get_kubeconig
+  make get_kubeconfig
   ```
   
 **[Step 6] Decommission the cluster & clean the project**
