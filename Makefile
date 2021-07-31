@@ -9,7 +9,7 @@ delete_cluster:
         @ansible-playbook delete-cluster.yml -i inventory
 
 
-get_kubeconig:
+get_kubeconfig:
         @if [[ -f "kube-cluster/kubeconfig/admin.conf" ]]; then\
                 cat kube-cluster/kubeconfig/admin.conf; \
         else \
