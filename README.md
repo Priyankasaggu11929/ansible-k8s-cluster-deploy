@@ -158,7 +158,7 @@ The project is using the following 2 ansible playbook(s) :
 - Run the following command to clone the project on your local machine:
 
   ```
-  git clone git@github.com:Priyankasaggu11929/k8s-deploy-playbook.git
+  git clone git@github.com:Priyankasaggu11929/ansible-k8s-cluster-deploy.git
   ```
 
 **[Step 4] Create the cluster**
