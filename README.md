@@ -138,8 +138,16 @@ The project is using the following 2 ansible playbook(s) :
   ```
   aws configure
   ```
+  
+**[Step 2]  Clone the project**
 
-**[Step 2]** Organise the SSH keys in right places.
+- Run the following command to clone the project on your local machine:
+
+  ```
+  git clone git@github.com:Priyankasaggu11929/ansible-k8s-cluster-deploy.git
+  ```
+
+**[Step 3]** Organise the SSH keys in right places.
 
 - Copy the provided SSH key (`ansible.pub`) in the required path
 
@@ -151,14 +159,6 @@ The project is using the following 2 ansible playbook(s) :
 
   ```
   cp <path-to-downloads>/kubernetes-key.pem keys/
-  ```
-
-**[Step 3]  Clone the project**
-
-- Run the following command to clone the project on your local machine:
-
-  ```
-  git clone git@github.com:Priyankasaggu11929/ansible-k8s-cluster-deploy.git
   ```
 
 **[Step 4] Create the cluster**
