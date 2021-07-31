@@ -127,6 +127,8 @@ The project is using the following 2 ansible playbook(s) :
 
 ## Instructions to provision the cluster
 
+Once, [the tools and software listed above](#on-the-local-machine), are installed and setup on your local machine, follow the steps listed below.
+
 **[Step 1]  Configure the AWS CLI**
 
 - Run the following command to login into the provided aws account using aws-cli, providing the respective `AWS Access Key ID` , `AWS Secret Access Key`, & required `region` name.
