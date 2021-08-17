@@ -1,4 +1,4 @@
-# [solution] Deploy kubernetes cluster on AWS EC2 instances
+# Deploy kubernetes cluster on AWS EC2 instances
 
 ## Contents
 
@@ -17,7 +17,6 @@ I have used `Ansible` playbooks to automate the provisioning of AWS EC2 instance
 
 - Create a SSH key pair (in my case, I’ve named it `ansible`)
 
-  *(Or use the one handed over in the email thread. Please add it on the right path i.e, `~/.ssh/ansible`)*
 
   ```
   $ ssh-keygen -t rsa
@@ -151,12 +150,6 @@ Once, [the tools and software listed above](#on-the-local-machine), are installe
 
   ```
   cp <path-to-downloads>/ansible.pub ~/.ssh/
-  ```
-
-- Copy the provided EC2 private key (`kubernetes-key.pem`) in the required path
-
-  ```
-  cp <path-to-downloads>/kubernetes-key.pem keys/
   ```
 
 **[Step 4] Create the cluster**
